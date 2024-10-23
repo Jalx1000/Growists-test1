@@ -35,9 +35,9 @@ export default class Task {
       }
       // Marcamos como completed la tarea que corresponde al índice recibido.
       this.tasks[index].completed = true;
-      console.log(this.tasks[index] !== true);
-      console.log("Tarea marcada como completada.");
       this.saveTask();
+      this.showPendsTask();
+      console.log("Tarea marcada como completada.");
       return "Tarea marcada como completada.";
     } else {
       console.log(pc.bgRed("Índice inválido."));
