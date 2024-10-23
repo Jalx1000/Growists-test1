@@ -18,23 +18,30 @@ export default class Task {
     // Verifica si el indice es !0 y indice < que la longitud de task
     if (index >= 0 && index < this.tasks.length) {
       this.tasks.splice(index, 1); // aquí se elimina la tarea dentro de task
-      console.log(pc.bgRed("Tarea eliminada."));
       this.showPendsTask();
       this.saveTask();
+      console.log(pc.bgRed("Tarea eliminada."));
+      return "Tarea Eliminada"
     } else {
       console.log("Índice inválido.");
+      return "Índice inválido. rango entre \n[0,n]";
     }
   }
   completedTask(index) {
     // Verifica si el indice es !0 y indice < que la longitud de task
     if (index >= 0 && index < this.tasks.length) {
+      if (this.tasks[index].completed === true) {
+        return "Tarea ya estaba hecha";
+      }
       // Marcamos como completed la tarea que corresponde al índice recibido.
       this.tasks[index].completed = true;
+      console.log(this.tasks[index] !== true);
       console.log("Tarea marcada como completada.");
       this.saveTask();
-      this.showPendsTask();
+      return "Tarea marcada como completada.";
     } else {
       console.log(pc.bgRed("Índice inválido."));
+      return "Índice inválido. rango entre \n[0,n]";
     }
   }
   showPendsTask() {
@@ -46,6 +53,15 @@ export default class Task {
           pc.green(`${index + 1}. ${task.task} -- completada 👌`) + ""
         );
     });
+  }
+
+  showTask(index) {
+    console.log("\n--- Tarea ---");
+
+    if (index >= 0 && index < this.tasks.length) {
+      return "No existe";
+    }
+    if (!this.tasks[index].completed) return this.tasks[index];
   }
 
   saveTask() {

@@ -5,7 +5,8 @@
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "node --watch ./console.js"
+    "api": "node --watch ./api/server.js",
+    "cmd": "node --watch ./console.js"
   },
   "keywords": [],
   "author": "",
