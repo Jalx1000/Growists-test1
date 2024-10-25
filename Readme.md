@@ -25,3 +25,5 @@ El comando `cmd` ejecuta los metodos de clase en modo de **consola**
 ```bash
 npm run cmd
 ```
+
+### [Abrir test 3](https://github.com/Jalx1000/Growist-test3)
